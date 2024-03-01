@@ -1,12 +1,19 @@
 package net.boschingmachine.emergencylanding.mixin;
 
+import net.boschingmachine.emergencylanding.EmergencyLanding;
+import net.boschingmachine.emergencylanding.effects.EffectsRegistry;
 import net.boschingmachine.emergencylanding.extras.IHasTemperature;
 import net.boschingmachine.emergencylanding.extras.TemperatureHandler;
+import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.registries.RegistryObject;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -41,8 +48,12 @@ public abstract class PlayerMixins extends LivingEntity implements IHasTemperatu
     {
         var player = (Player)(Object)this;
         temperature.Tick(player);
-    }
 
+        if (player.hasEffect(EffectsRegistry.Heatstroke.get()))
+        {
+
+        }
+    }
 
     @Override
     public float GetCurrentTemperature()

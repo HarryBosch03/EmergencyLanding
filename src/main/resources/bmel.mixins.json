@@ -5,10 +5,8 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "EmergencyLanding.refmap.json",
   "mixins": [
-    "PlayerMixins",
-    "GuiMixins"
-  ],
-  "client": [
+    "GuiMixins",
+    "PlayerMixins"
   ],
   "injectors": {
     "defaultRequire": 1

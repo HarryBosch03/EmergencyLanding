@@ -34,10 +34,6 @@ public abstract class GuiMixins extends GuiComponent
         var currentTemperature = ((IHasTemperature) player).GetCurrentTemperature();
         var targetTemperature = ((IHasTemperature) player).GetTargetTemperature();
 
-        var time = player.level.getGameTime();
-        //currentTemperature = Mth.lerp(Mth.sin(time * 0.04f) * 0.5f + 0.5f, TemperatureHandler.MinSafeTemp, TemperatureHandler.MaxSafeTemp);
-        //targetTemperature = Mth.lerp(Mth.cos(time * 0.04f) * 0.5f + 0.5f, TemperatureHandler.MinSafeTemp, TemperatureHandler.MaxSafeTemp);
-
         var icons = new ResourceLocation(EmergencyLanding.ModID, "textures/gui/icons.png");
         RenderSystem.setShaderTexture(0, icons);
 

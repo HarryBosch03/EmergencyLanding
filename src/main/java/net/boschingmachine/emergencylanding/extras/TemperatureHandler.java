@@ -6,6 +6,8 @@ import net.minecraft.network.chat.TextComponent;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.registries.ObjectHolder;
 
@@ -27,8 +29,8 @@ public class TemperatureHandler
 
     public float currentTemperature = 37.0f;
     public float targetTemperature = 37.0f;
-    public float heatstrokeCounter;
-    public float hypothermiaCounter;
+    public int heatstrokeCounter;
+    public int hypothermiaCounter;
     public float Conductivity = 1.0f;
 
     public void SaveData(CompoundTag tag)
@@ -47,7 +49,6 @@ public class TemperatureHandler
 
     public void Tick(Player player)
     {
-
         Conductivity = 1.0f;
         CalculateTargetTemperature(player);
         var transferSpeed = BaseTransferSpeed * Conductivity;
@@ -56,10 +57,9 @@ public class TemperatureHandler
         if (currentTemperature > MaxSafeTemp) heatstrokeCounter++;
         else if (heatstrokeCounter > 0) heatstrokeCounter--;
 
-        var heatstrokeLevel = heatstrokeCounter / 400 - 1;
-        if (heatstrokeLevel > 0)
+        if (heatstrokeCounter > 400)
         {
-            player.addEffect(new MobEffectInstance(heatstrokeEffect, 1, 1));
+            player.addEffect(new MobEffectInstance(heatstrokeEffect, heatstrokeCounter, heatstrokeCounter / 400 - 1));
         }
 
         if (currentTemperature < MinSafeTemp) hypothermiaCounter++;
