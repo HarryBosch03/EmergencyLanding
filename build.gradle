@@ -144,6 +144,7 @@ dependencies {
 
     runtimeOnly fg.deobf("curse.maven:ex-nihilo-sequentia-400012:4556977")
     runtimeOnly fg.deobf("curse.maven:modernfix-790626:5077313")
+    runtimeOnly fg.deobf("curse.maven:create-328085:4835188")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }

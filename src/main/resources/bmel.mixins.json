@@ -4,7 +4,11 @@
   "package": "net.boschingmachine.emergencylanding.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "EmergencyLanding.refmap.json",
-  "mixins": [],
+  "mixins":
+  [
+    "PlayerRespawnMixin",
+    "GuiMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

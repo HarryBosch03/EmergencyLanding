@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "bmel:block/nameplate"
+    },
+    "facing=south": {
+      "model": "bmel:block/nameplate",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "bmel:block/nameplate",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "bmel:block/nameplate",
+      "y": 270
+    }
+  }
+}
