@@ -1,0 +1,12 @@
+{
+  "type": "bmel:exoplanet",
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": 0,
+    "settings": "bmel:exoplanet",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "bmel:exoplanet"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.boschingmachine.emergencylanding.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "EmergencyLanding.refmap.json",
+  "mixins":
+  [
+    "PlayerRespawnMixin",
+    "GuiMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
