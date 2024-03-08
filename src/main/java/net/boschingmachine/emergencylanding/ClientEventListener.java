@@ -1,8 +1,6 @@
 package net.boschingmachine.emergencylanding;
 
 import net.boschingmachine.emergencylanding.blockEntities.BlockEntityRegister;
-import net.boschingmachine.emergencylanding.blocks.BlockRegister;
-import net.boschingmachine.emergencylanding.blocks.Nameplate.NameplateRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
